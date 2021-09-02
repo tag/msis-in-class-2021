@@ -49,7 +49,6 @@
 </nav>
 
 <main role="main" class="container">
-
     <table class="table">
         <thead>
           <tr>
@@ -59,13 +58,6 @@
             <th scope="col">Publisher</th>
             <th scope="col">Page Count</th>
             <th scope="col">MSRP</th>
-            <th scope="col">
-              <form>
-                  <label for="exampleFormControlInput1"> </label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-              </form>
-              </td>
-            </th>
           </tr>
         </thead>
         <tbody>
@@ -76,12 +68,6 @@
             <td>George Allen & Unwin</td>
             <td>310</td>
             <td>$15</td>
-            <td>
-              <form id="B">
-                  <label for="exampleFormControlInput1"> </label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-              </form>
-            </td>
           </tr>
           <tr>
             <th scope="row">How to Lie with Statistics</th>
@@ -90,12 +76,6 @@
             <td>W. W. Norton & Company</td>
             <td>144</td>
             <td>$9</td>
-            <td>
-              <form id="B">
-                  <label for="exampleFormControlInput1"> </label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-              </form>
-            </td>
           </tr>
           <tr>
             <th scope="row">The Monk Who Sold His Ferrari</th>
@@ -104,12 +84,6 @@
             <td>Harper Collins Publishers</td>
             <td>198</td>
             <td>$10</td>
-            <td>
-              <form id="B">
-                  <label for="exampleFormControlInput1"> </label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-              </form>
-            </td>
           </tr>
           <tr>
             <th scope="row">The Immortals of Meluha</th>
@@ -118,12 +92,6 @@
             <td>Westland Press</td>
             <td>390</td>
             <td>$14</td>
-            <td>
-              <form id="B">
-                  <label for="exampleFormControlInput1"> </label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-              </form>
-            </td>
           </tr>
           <tr>
             <th scope="row">The 3 Mistakes of My Life</th>
@@ -132,65 +100,41 @@
             <td>Rupa Publications</td>
             <td>258</td>
             <td>$11</td>
-            <td>
-              <form id="B">
-                  <label for="exampleFormControlInput1"> </label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-              </form>
-            </td>
           </tr>
-          <tr>
-            <th scope="row">
-              <form id="B">
-                <label for="exampleFormControlInput1"> </label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-            </form>
-            </th>
-            <td>
-              <form id="B">
-                  <label for="exampleFormControlInput1"> </label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-              </form>
-            </td>
-            <td>
-              <form id="B">
-                  <label for="exampleFormControlInput1"> </label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-              </form>
-            </td>
-            <td>
-              <form id="B">
-                  <label for="exampleFormControlInput1"> </label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-              </form>
-            </td>
-            <td>
-              <form id="B">
-                  <label for="exampleFormControlInput1"> </label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-              </form>
-            </td>
-            <td>
-              <form id="B">
-                  <label for="exampleFormControlInput1"> </label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-              </form>
-            </td>
-            <td>
-              <form id="B">
-                  <label for="exampleFormControlInput1"> </label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ">
-              </form>
-            </td>
-          </tr>
-        </tbody>
+         </tbody>
       </table>
-
-      <a href="https://i.harperapps.com/hcuk/covers/9780007270613/x450.JPG"><img src="image/2.jpg" alt="The Hobbit"></a>
-      <p>The hobbit. (n.d.). The Official Tolkien Online Bookshop. Retrieved September 2, 2021, from https://www.tolkien.co.uk/products/the-hobbit-illustrated-edition-j-r-r-tolkien-alan-lee-9780007270613/</p>
-      
-      <a href="https://www.robinsharma.com/files/img/book/e1a3580240181b13694e138c27f529e2.png"><img src="image/1.jpg" alt="The Monk Who Sold His Ferrari"></a>
-      <p>The monk who sold his ferrari. (n.d.). Retrieved September 2, 2021, from https://www.robinsharma.com/book/the-monk-who-sold-his-ferrari</p>
+      <h6 id="B">Add Books:</h6>
+      <form class="needs-validation" novalidate>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom01">Title</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Happiness"  required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom02">Author(s)</label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="Mike Roberts" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom03">Year Published</label>
+            <input type="number" class="form-control" id="validationCustom03" placeholder="1998"  required>
+          </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationCustom04">Publisher</label>
+            <input type="text" class="form-control" id="validationCustom04" placeholder="Galaxy Publishers" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom05">Page count</label>
+            <input type="number" class="form-control" id="validationCustom05" placeholder="200" required>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="validationCustom06">MSRP</label>
+            <input type="number" class="form-control" id="validationCustom06" placeholder="$20" required>
+          </div>
+         <div class="col-md-3 mb-3">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
 
 </main><!-- /.container -->
 </body>
