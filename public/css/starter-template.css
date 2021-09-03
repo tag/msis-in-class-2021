@@ -3,9 +3,12 @@ body {
   background-color: burlywood;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.starter-template {
-  padding: 3rem 1.5rem;
+.header {
+  padding: 60px;
   text-align: center;
+  background: #8f9796;
+  color: white;
+  font-size: 30px;
 }
 
 h1.intro{
