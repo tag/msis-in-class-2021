@@ -4,6 +4,7 @@ services:
     build: .
     ports:
       - "8080:80"
+      #saving on hard drive and container at the same time
     volumes:
       - ./public:/var/www/html
     
