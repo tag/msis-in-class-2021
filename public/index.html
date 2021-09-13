@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     
+    <script src="https://unpkg.com/vue@next"></script>
 
     <title>Hello, world!</title>
   </head>
@@ -39,8 +40,15 @@
         <div class="col col-4">
           One of two columns
         </div>
-        <div class="col col-8">
-          One of two columns
+        <div id="offerApp" class="col col-8">
+          <h1>Two of two columns</h1>
+          <p>{{ foo }}</p>
+          <p>{{ msg }}</p>
+          <p>{{ nope }}</p>
+          
+          <ul v-for="row in offers">
+            <li>{{ row.name }} - {{row.salary}}</li>
+          </ul>
         </div>
 
       </div>
@@ -50,5 +58,6 @@
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
+    <script src="js/index.js"></script>
   </body>
 </html>
