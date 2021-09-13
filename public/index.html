@@ -23,15 +23,11 @@
 
     <div class="container">
         <div id="offerApp" class="col col-8">
-            <p>{{ foo }}</p>
-            <p>{{ msg }}</p>
             <!-- big 'for each loop' can use table / list -->
-            <table class="table table-striped">
-              <tr v-for="item in list">
-                <td>{{ item }}</td>
+              <ul>
+                <li v-for="row in offer">{{ row.name }}</li>
                 
-              </tr>
-            </table>
+              </ul>
         </div>
     </div>
 

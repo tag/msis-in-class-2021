@@ -1,27 +1,30 @@
 {
     "offer":[
         {
-            "id": "01",
-            "salary": "72000",
-            "bonus": "5000",
+            "id": 1,
+            "name": "Joe Doe",
+            "salary": 72000,
+            "bonus": 5000,
             "company": "KMPG",
-            "offerDate": "13 September 2021"
+            "offerDate": "2021-09-13"
         },
 
         {
-            "id": "02",
-            "salary": "90000",
-            "bonus": "10000",
+            "id": 2,
+            "name": "Jack French",
+            "salary": 90000,
+            "bonus": 10000,
             "company": "PWC",
-            "offerDate": "9 September 2021"
+            "offerDate": "2021-09-01"
         },
-        
+
         {
-            "id": "03",
-            "salary": "85000",
-            "bonus": "9000",
+            "id": 3,
+            "name": "Shane Efram",
+            "salary": 85000,
+            "bonus": 9000,
             "company": "EY",
-            "offerDate": "1 September 2021"
+            "offerDate": "2021-09-08"
         }
     ]
 }
