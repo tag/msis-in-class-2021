@@ -1,0 +1,20 @@
+{
+    "offers": [
+        {
+            "id": 1,
+            "name": "Jordan Doe",
+            "salary": 120000,
+            "bonus": 9000,
+            "company": "EY",
+            "offerDate": "2021-10-12"
+        },
+        {
+            "id": 2,
+            "name": "Jesse Doe",
+            "salary": 90000,
+            "bonus": 2000,
+            "company": "IU",
+            "offerDate": "2021-12-10"
+        }
+    ]
+}
