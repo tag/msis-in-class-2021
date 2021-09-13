@@ -17,11 +17,21 @@
 
 <!--- In class 9/13/2021 -->
 
+    <!-- js CDN connection -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- js CDN connection -->
+
     <div class="container">
         <div id="offerApp" class="col col-8">
             <p>{{ foo }}</p>
             <p>{{ msg }}</p>
-            <p>{{ list }}</p>
+            <!-- big 'for each loop' can use table / list -->
+            <table class="table table-striped">
+              <tr v-for="item in list">
+                <td>{{ item }}</td>
+                
+              </tr>
+            </table>
         </div>
     </div>
 
@@ -37,10 +47,13 @@
 
 
 
-    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Linking js --> 
     <script src="js/index.js"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+
+    
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

@@ -1,0 +1,27 @@
+{
+    "offer":[
+        {
+            "id": "01",
+            "salary": "72000",
+            "bonus": "5000",
+            "company": "KMPG",
+            "offerDate": "13 September 2021"
+        },
+
+        {
+            "id": "02",
+            "salary": "90000",
+            "bonus": "10000",
+            "company": "PWC",
+            "offerDate": "9 September 2021"
+        },
+        
+        {
+            "id": "03",
+            "salary": "85000",
+            "bonus": "9000",
+            "company": "EY",
+            "offerDate": "1 September 2021"
+        }
+    ]
+}
