@@ -45,6 +45,11 @@
           <div id="offerApp" class="col col-8">
             <h1>Hello, world!</h1>
 
+            <p>{{person.name.first}} {{person.name.last}}</p>
+
+            <p><a v-bind:href="'mailto:'+person.email">{{person.email}}</a></p>
+            <p>{{ person }}</p>
+
             <table class="table">
                 <tbody>
                     <tr v-for="offer in offers">
