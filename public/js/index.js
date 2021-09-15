@@ -1,3 +1,6 @@
+
+
+
 const Offer = {
     data() {
       return {
@@ -29,7 +32,24 @@ const Offer = {
                 "offerDate": "2021-09-08"
             }
         ]
+      },
+
+      created(){
+        fetch('https://randomuser.me/api')
+        .then( function(response) {
+            return response.json()  //This is also done as a promise
+          } 
+        )
+
+        .then(
+          function(json){
+            console.log(json);
+            this.result = json.result[0];
+          }
+        )
+        .catch( () )
       }
+
     }
   }
   
