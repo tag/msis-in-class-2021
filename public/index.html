@@ -42,9 +42,9 @@
         </div>
         <div id="offerApp" class="col col-8">
           <h1>Two of two columns</h1>
-          <p>{{ foo }}</p>
-          <p>{{ msg }}</p>
-          <p>{{ nope }}</p>
+          <p>{{ person.name.first }} {{ person.name.last }}</p>
+          <p><a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
+          <p>{{ person }}</p>
           
           <ul v-for="row in offers">
             <li>{{ row.name }} - {{row.salary}}</li>
