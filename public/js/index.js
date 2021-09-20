@@ -1,56 +1,54 @@
 
-
-
 const Offer = {
-    data() {
-      return {
-        "offer":[
-            {
-                "id": 1,
-                "name": "Joe Doe",
-                "salary": 72000,
-                "bonus": 5000,
-                "company": "KMPG",
-                "offerDate": "2021-09-13"
-            },
-    
-            {
-                "id": 2,
-                "name": "Jack French",
-                "salary": 90000,
-                "bonus": 10000,
-                "company": "PWC",
-                "offerDate": "2021-09-01"
-            },
-    
-            {
-                "id": 3,
-                "name": "Shane Efram",
-                "salary": 85000,
-                "bonus": 9000,
-                "company": "EY",
-                "offerDate": "2021-09-08"
-            }
-        ]
-      },
-
-      created(){
-        fetch('https://randomuser.me/api')
-        .then( function(response) {
-            return response.json()  //This is also done as a promise
-          } 
-        )
-
-        .then(
-          function(json){
-            console.log(json);
-            this.result = json.result[0];
-          }
-        )
-        .catch( () )
+  data() {
+    return {
+      "person": {},
+      "offers": [
+              {
+                  "id": 1,
+                  "name": "Janet Doe",
+                  "salary": 120000,
+                  "bonus": 9000,
+                  "company":"EY",
+                  "offerDate": "2021-09-08"
+              },
+              {
+                  "id": 2,
+                  "name": "Jordan Doe",
+                  "salary": 80000,
+                  "bonus": 2000,
+                  "company":"IU",
+                  "offerDate": "2021-08-09"
+              }
+          ]
       }
+  },
+  computed: {
+      prettyBirthday() {
+          return dayjs(this.person.dob.date)
+          .format('D MMM YYYY')
+      }
+  },
+  methods: {
+      fetchUserData() {
+          console.log("A");
+          fetch('https://randomuser.me/api/')
+          .then( response => response.json() )
+          .then( (responseJson) => {
+              console.log(responseJson);
+              console.log("C");
+              this.person = responseJson.results[0];
+          })
+          .catch( (err) => {
+              console.error(err);
+          })
+          console.log("B");
+      }
+  },
+  created() {
+      this.fetchUserData();
+  } //end created
+} // end Offer config
 
-    }
-  }
-  
-  Vue.createApp(Offer).mount('#offerApp')
+Vue.createApp(Offer).mount('#offerApp');
+console.log("Z");
