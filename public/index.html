@@ -40,7 +40,7 @@
     <div class="container">
         <div class="row align-items-start">
           <div class="col col-4">
-            <p>First of two columns</p>
+            <!-- <p>Profile information for {{ person.name.first }}</p> -->
           </div>
           <div id="offerApp" class="col col-8">
             <h1>Hello, world!</h1>
@@ -48,13 +48,13 @@
             <form v-on:submit.prevent="fetchUserData">
               <button type="submit">Reload</button>
             </form>
-            <p>{{person.name.first}} {{person.name.last}}</p>
-            <p>{{ person.dob.date }}</p>
-            <p>{{ prettyBirthday }}</p>
-
-            <p><a v-bind:href="'mailto:'+person.email">{{person.email}}</a></p>
-            <p>{{ person }}</p>
-
+            <div v-if="person">
+              <p>{{person.name.first}} {{person.name.last}}</p>
+              <p>{{ person.dob.date }}</p>
+              <p>{{ prettyBirthday }}</p>
+              <img v-bind:src="person.picture.large" >
+              <p><a v-bind:href="'mailto:'+person.email">{{person.email}}</a></p>
+            </div>
             <table class="table">
                 <tbody>
                     <tr v-for="offer in offers">
