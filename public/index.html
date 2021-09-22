@@ -45,11 +45,14 @@
           <form v-on:submit.prevent="fetchUserData">
             <button type="submit">Refresh</button>
           </form>
-          <p>{{ person.name.first }} {{ person.name.last }}</p>
-          <p>{{ prettyBirthday }}</p>
-          <p><a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
-          <p>{{ person }}</p>
           
+          <div v-if="person">
+            <p>{{ person.name.first }} {{ person.name.last }}</p>
+            <p><img v-bind:src="person.picture.large"></p>
+            <p>{{ prettyBirthday }}</p>
+            <p><a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
+          </div>
+
           <ul v-for="row in offers">
             <li>{{ row.name }} - {{row.salary}}</li>
           </ul>

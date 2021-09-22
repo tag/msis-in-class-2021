@@ -2,7 +2,7 @@
 const Offer = {
     data() {
       return {
-        "person": {},
+        "person": undefined,
         "offers": [
                 {
                     "id": 1,
