@@ -56,10 +56,13 @@
               <li v-for="item in list">{{ item }}</li>
             </ul>
             <p>{{ message }}</p>
-            <p>{{ result.name }}</p>
-            <p>{{ result.dob.date }}</p>
-            <p>{{ prettyBirthday }}</p>
-            <p><a v-bind:href="'mailto:' + result.email">{{ result.email }}</a></p>
+            <div v-if="result">
+              <p>{{ result.name.first }} {{ result.name.last }}</p>
+              <p>{{ result.dob.date }}</p>
+              <p>{{ prettyBirthday }}</p>
+              <p><img v-bind:src="result.picture.large"></p>
+              <p><a v-bind:href="'mailto:' + result.email">{{ result.email }}</a></p>
+            </div>
           </div>
         </div>
     <table></table>

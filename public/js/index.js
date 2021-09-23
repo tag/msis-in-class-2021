@@ -2,7 +2,7 @@
 const SomeApp = {
     data() {
       return {
-        result: {},
+        result: undefined,
         list: [5,6,7,8],
         message: "Waiting ..."
       }
