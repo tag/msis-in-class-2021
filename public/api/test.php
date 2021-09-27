@@ -2,7 +2,7 @@
     $foo = "test";
     $bar = "is initiated";
 
-    echo $test . $bar;
+    echo $foos . $bar;
     
 
     $arr = ["first" => "Jack",
@@ -13,4 +13,8 @@
         echo "<ul>";
         echo "<li>".$key . " is " .$val. "</li>";
         echo "</ul>";
-    };
+    }
+
+
+    echo json_encode($arr, JSON_PRETTY_PRINT);
+            
