@@ -5,5 +5,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./public:/var/www/html
+      - ./app/public:/srv/app/public
+    env_file:
+      - ./docker/env
     
