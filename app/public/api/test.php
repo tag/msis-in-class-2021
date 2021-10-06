@@ -1,6 +1,7 @@
 <?php
 
 $num = 2;
+
 $foo = $num ." be";
 $bar = "or not " .$num. " be";
 
@@ -53,9 +54,3 @@ function printAndEncode( $val ) {
 // PascalCase
 // snake_case
 // kebab-case
-
-
-
-
-
-
