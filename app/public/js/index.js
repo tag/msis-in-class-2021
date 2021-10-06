@@ -1,51 +1,54 @@
 const Offer = {
     data() {
       return {
-        "person": undefined,
-        "offers": [
-                {
-                    "id": 1,
-                    "name": "Jane Student",
-                    "offer": 100000,
-                    "bonus": 9000,
-                    "company": "EY",
-                    "offerDate": "2021-10-05"
-                },
-                {
-                    "id": 2,
-                    "name": "Jordan Student",
-                    "offer": 87000,
-                    "bonus": 3000,
-                    "company": "IU",
-                    "offerDate": "2021-09-25"
-                }
-            ]
+            "students": [],
+            "offers": [],
+            "selectedStudent": null
         }
     },
     computed: {
-        prettyBirthday() {
-            return dayjs(this.person.dob.date)
-            .format('D MMM YYYY');
-        }
+        // prettyBirthday() {
+        //     return dayjs(this.person.dob.date)
+        //     .format('D MMM YYYY');
+        // }
     },
     methods: {
-        fetchUserData() {
-            fetch('https://randomuser.me/api/')
+        selectStudent(s) {
+            console.log("Clicked", s);
+            if (this.selectedStudent == s) {
+                return;
+            }
+
+            this.selectedStudent = s;
+            this.offers = [];
+            this.fetchOfferData(s);
+        },
+        fetchStudentData() {
+            fetch('/api/student/')
             .then(response => response.json())
             .then((parsedJson) => {
                 console.log(parsedJson);
-                this.person = parsedJson.results[0]
-                console.log("C");
+                this.students = parsedJson
             })
             .catch( err => {
                 console.error(err)
             })
-
-            console.log("B");
+        },
+        fetchOfferData(s) {
+            console.log("Fetching offers for", s);
+            fetch('/api/offer/?student=' + s.id)
+            .then(response => response.json())
+            .then((parsedJson) => {
+                console.log(parsedJson);
+                this.offers = parsedJson
+            })
+            .catch( err => {
+                console.error(err)
+            })
         }
     },
     created() {
-        this.fetchUserData();
+        this.fetchStudentData();
     }
   }
   
