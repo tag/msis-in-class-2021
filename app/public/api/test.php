@@ -1,51 +1,56 @@
 <?php
 
 $num = 2;
-$foo = $num. " be";
-$bar = "or not ".$num." be";
 
-echo $foo ." ". $bar ."\n";
+$foo = $num ." be";
+$bar = "or not " .$num. " be";
+
+echo $foo . ' ' . $bar . "\n";
 
 echo $num * $num * $num;
 
-// This is a comment
-# This is also a comment
+$arr = [
+    "first" => "Tom",
+    "second" => "Bipin",
+    "best" => "DS"
+];
 
-/* This is a
-multi-line
-comment
-*/
+$arr2 = [1,1,2,3,5,8];
+
 
 if (true) {
-    echo "TRUE \n";
-} else {
-    echo "FALSE \n";
+    echo "\nTRUE\n";
 }
 
 while (true) {
+    //This way it doesn't actually do anything
     break;
 }
 
-$arr = [1,1,2,3,5,8];
+# This is also a comment
 
-$arr2 = [
-    "first"  => "Tom",
-    "second" => "Bipin",
-    "best"   => "DS"
-];
+/* This is a 
+multi-line 
+comment */
 
-function printList($someArr) {
-    echo "<ul>\n";
-    foreach($someArr as $key => $val) {
-        echo "<li>".$key." is ".$val."</li>\n";
-    }
-    echo "</ul>\n";
+// echo "<ul>";
+// foreach($arr as $key=>$val) {
+//     echo "<li>".$key ." is ".$val."</li>";
+// }
+// echo "</ul>";
+
+function printAndEncode( $val ) {
+    echo json_encode(
+        $val, 
+        JSON_PRETTY_PRINT|JSON_THROW_ON_ERROR
+    );
 }
 
-printList($arr);
-printList($arr2);
+// ====
+// Naming conventions
 
-echo json_encode(
-    $arr2,
-    JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR
-);
+// JS & PHP : camelCase
+
+// PascalCase
+// snake_case
+// kebab-case
