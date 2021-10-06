@@ -33,29 +33,47 @@
             </li>
           </ul>
         </div>
-      </div>
-    </nav>
-    <div class="container">
-      <div class="row align-items-start">
-        <div class="col col-4">
-          One of two columns
-        </div>
-        <div id="offerApp" class="col col-8">
-          <h1>Two of two columns</h1>
-          <form v-on:submit.prevent="fetchUserData">
-            <button type="submit">Refresh</button>
-          </form>
-          
-          <div v-if="person">
-            <p>{{ person.name.first }} {{ person.name.last }}</p>
-            <p><img v-bind:src="person.picture.large"></p>
-            <p>{{ prettyBirthday }}</p>
-            <p><a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
+      </nav>
+
+    <div id="offerApp" class="container">
+        <div class="row align-items-start">
+          <div class="col col-4">
+            <!-- <p>Profile information for {{ person.name.first }}</p> -->
+            <div v-for="s in students" v-on:click="selectStudent(s)"
+             :class="['student', {selected: selectedStudent && s.id == selectedStudent.id}]">
+              <strong>{{ s.username }}</strong><br>
+              {{ s.name }}
+            </div>
+          </div>
+          <div  class="col col-8" v-if="selectedStudent">
+            <h1>Offers for {{ selectedStudent.name }}</h1>
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Company</th>
+                  <th>Salary</th>
+                  <th>Bonus</th>
+                  <th>Offer Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+                <tbody>
+                    <tr v-for="offer in offers">
+                        <td>{{ offer.companyName }}</td>
+                        <td>{{ prettyDollar(offer.salary) }}</td>
+                        <td>{{ prettyDollar(offer.bonus) }}</td>
+                        <td>{{ offer.offerDate }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="noOffers" v-if="! offers.length">
+              <h3>No offers. 😥</h3>
+            </div>
+
           </div>
 
-          <ul v-for="row in offers">
-            <li>{{ row.name }} - {{row.salary}}</li>
-          </ul>
         </div>
 
       </div>

@@ -2,53 +2,58 @@
 const Offer = {
     data() {
       return {
-        "person": undefined,
-        "offers": [
-                {
-                    "id": 1,
-                    "name": "Janet Doe",
-                    "salary": 120000,
-                    "bonus": 9000,
-                    "company":"EY",
-                    "offerDate": "2021-09-08"
-                },
-                {
-                    "id": 2,
-                    "name": "Jordan Doe",
-                    "salary": 80000,
-                    "bonus": 2000,
-                    "company":"IU",
-                    "offerDate": "2021-08-09"
-                }
-            ]
+        "students": [],
+        selectedStudent: null,
+        "offers": []
         }
     },
     computed: {
-        prettyBirthday() {
-            return dayjs(this.person.dob.date)
-            .format('D MMM YYYY')
-        }
+        
     },
     methods: {
-        fetchUserData() {
-            console.log("A");
-            fetch('https://randomuser.me/api/')
+        prettyData(d) {
+            return dayjs(d)
+            .format('D MMM YYYY')
+        },
+        prettyDollar(n) {
+            const d = new Intl.NumberFormat("en-US").format(n);
+            return "$ " + d;
+        },
+        selectStudent(s) {
+            if (s == this.selectedStudent) {
+                return;
+            }
+            this.selectedStudent = s;
+            this.offers = [];
+            this.fetchOfferData(this.selectedStudent);
+        },
+        fetchStudentData() {
+            fetch('/api/student/')
             .then( response => response.json() )
             .then( (responseJson) => {
                 console.log(responseJson);
-                console.log("C");
-                this.person = responseJson.results[0];
+                this.students = responseJson;
             })
             .catch( (err) => {
                 console.error(err);
             })
-            console.log("B");
+        },
+        fetchOfferData(s) {
+            console.log("Fetching offer data for ", s);
+            fetch('/api/offer/?student=' + s.id)
+            .then( response => response.json() )
+            .then( (responseJson) => {
+                console.log(responseJson);
+                this.offers = responseJson;
+            })
+            .catch( (err) => {
+                console.error(err);
+            })
         }
     },
     created() {
-        this.fetchUserData();
+        this.fetchStudentData();
     } //end created
 } // end Offer config
   
 Vue.createApp(Offer).mount('#offerApp');
-console.log("Z");
