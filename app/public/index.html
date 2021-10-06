@@ -41,10 +41,11 @@
             <!-- <p>Profile information for {{ person.name.first }}</p> -->
             <div v-for="s in students" v-on:click="selectStudent(s)"
              :class="['student', {selected: selectedStudent && s.id == selectedStudent.id}]">
-              <strong>{{ s.username }}</strong><br>
-              {{ s.name }}
+              <span class="userName">{{ s.username }}</span><br>
+              <span class="studentName">{{ s.name }}</span>
             </div>
           </div>
+
           <div  class="col col-8" v-if="selectedStudent">
             <h1>Offers for {{ selectedStudent.name }}</h1>
 

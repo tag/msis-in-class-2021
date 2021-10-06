@@ -17,7 +17,7 @@ const Offer = {
         },
         prettyDollar(n) {
             const d = new Intl.NumberFormat("en-US").format(n);
-            return "$ " + d;
+            return "$&nbsp;" + d;
         },
         selectStudent(s) {
             if (s == this.selectedStudent) {
