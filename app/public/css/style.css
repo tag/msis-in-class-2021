@@ -1,0 +1,102 @@
+header {
+    background-color: #76ADEC;
+    color: white;
+    padding: 8px;
+    font-size:  15px;
+    font-weight: bold;
+    width: 100%;
+  }
+  #lala1{
+    text-align: center;
+    align-items: center;
+  }
+  #lala2{
+    text-align: center;
+  }
+  #lala3{
+    text-align: center;
+  }
+  #lala4{
+    margin-left: 3%;
+  }
+  #top1{
+    width:150px;
+    height:100px;
+    margin-left: 43.5%;
+  }
+  #top2{
+    width:150px;
+    height:100px;
+    margin-left: 43.5%;
+  }
+  #top3{
+    width:150px;
+    height:100px;
+    margin-left: 43.5%;
+  }
+  #top4{
+    width:150px;
+    height:100px;
+    margin-left: 43.5%;
+  }
+  #bla1{
+    text-align: left;
+  }
+  #formdiv{
+    width:60%;
+  }
+  //for Page 3//
+  .Slides {display:none;}
+  //page 3 end//
+  th[role=columnheader]:not(.no-sort) {
+    cursor: pointer;
+  }
+  
+  th[role=columnheader]:not(.no-sort):after {
+    content: '';
+    float: right;
+    margin-top: 7px;
+    border-width: 0 7px 7px;
+    border-style: solid;
+    border-color: #76ADEC transparent;
+    visibility: visible;
+    opacity: 1;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  th[aria-sort=ascending]:not(.no-sort):after {
+    border-bottom: none;
+    border-width: 7px 7px 0;
+  }
+  
+  th[aria-sort]:not(.no-sort):after {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  th[role=columnheader]:not(.no-sort):hover:after {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+.student {
+    margin: 10px 2px;
+    padding: 4px;
+    border: 1px solid gray;
+    background-color: antiquewhite;
+}
+
+.selected {
+    background-color: burlywood;
+}
+
+.userName {
+    font-weight:bold;
+}
+
+.studentName{
+    color:#999;
+}

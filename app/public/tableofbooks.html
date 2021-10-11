@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>D&S HW 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    
+  </head>
+  <body>
+    <header>
+      D&S HW 1- Aditi Sanjay
+    </header>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">User Profile<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tableofbooks.html">Books and more</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="topic.html">Hiking</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<br>
+<div id="lala2">
+<h3><b>Books to Read</b></h3>
+    <table class="table table-bordered table-striped " id="table-id">
+      <thead>
+       <tr>
+       <th class="text-center">Title </th>
+       <th class="text-center">Author(s)</th>
+       <th class="text-center">Year Published</th>
+       <th class="text-center">Publisher</th>
+       <th class="text-center">Page Count</th>
+       <th class="text-center">MSRP($)</th>
+       </tr></thead>
+
+      <tr>
+        <td>American Marxism</td>
+        <td>Mark R. Levin	</td>
+        <td>2021</td>
+        <td>Threshold Editions</td>
+        <td>304</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td>Greenlights</td>
+        <td>Matthew McConaughey	</td>
+        <td>2020</td>
+        <td>Crown Publishing Group (NY)</td>
+        <td>304</td>
+        <td>30</td>
+      </tr>
+      <tr>
+        <td>Make It Nice</td>
+        <td>Dorinda Medley</td>
+        <td>2021</td>
+        <td>Gallery Books</td>
+        <td>288</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td>How I Saved the World</td>
+        <td>Jesse Watters</td>
+        <td>2021</td>
+        <td>Broadside Books</td>
+        <td>320</td>
+        <td>27</td>
+      </tr>
+      <tr>
+        <td>The Premonition: A Pandemic Story</td>
+        <td>Michael Lewis</td>
+        <td>2021</td>
+        <td>W. W. Norton & Company</td>
+        <td>320</td>
+        <td>30</td>
+      </tr>
+      <tr>
+        <td>Bloodless</td>
+        <td>Douglas Preston, Lincoln Child</td>
+        <td>2021</td>
+        <td>Grand Central Publishing</td>
+        <td>368</td>
+        <td>29</td>
+      </tr>
+      <tr>
+        <td>Billy Summers</td>
+        <td>Stephen King</td>
+        <td>2021</td>
+        <td>Scribner Book Company</td>
+        <td>528</td>
+        <td>30</td>
+      </tr>
+      <tr>
+        <td>Complications</td>
+        <td>Danielle Steel</td>
+        <td>2021</td>
+        <td>Delacorte Press</td>
+        <td>256</td>
+        <td>29</td>
+      </tr>
+       <tfoot>
+       <tr><td colspan="6">Must Read Books for you</td></tr>
+       </tfoot>
+    </table><br>
+    </div>  
+    <div id="lala4">
+    <h3 id="bla1">Add a Book</h3>
+    <div id="formdiv">
+    <form>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" placeholder="Enter Title">
+  </div>
+  <div class="form-group">
+    <label for="author">Author(s)</label>
+    <input type="text" class="form-control" id="author" placeholder="Enter Author(s) Name">
+  </div>
+  <div class="form-group">
+    <label for="year">Year Published</label>
+    <input type="number" class="form-control" id="year" placeholder="Enter Published Year">
+  </div>
+  <div class="form-group">
+    <label for="publisher">Publisher</label>
+    <input type="text" class="form-control" id="publisher" placeholder="Enter Publisher Name">
+  </div>
+  <div class="form-group">
+    <label for="PgCount">Page Count</label>
+    <input type="number" class="form-control" id="PgCount" placeholder="Enter Page Count">
+  </div>
+  <div class="form-group">
+    <label for="amt">Price in $</label>
+    <input type="number" class="form-control" id="amt" placeholder="Enter Price">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form><br><br>
+</div>
+</div>
+<script src='js/tablesort.min.js'></script>
+<script>
+  new Tablesort(document.getElementById('table-id'));
+</script>
+  </body>
+</html>
