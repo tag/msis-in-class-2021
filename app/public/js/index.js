@@ -2,25 +2,9 @@
 const Offer = {
     data() {
       return {
-        "person": undefined,
-        "offers": [
-                {
-                    "id": 1,
-                    "name": "Janet Doe",
-                    "salary": 120000,
-                    "bonus": 9000,
-                    "company":"EY",
-                    "offerDate": "2021-09-08"
-                },
-                {
-                    "id": 2,
-                    "name": "Jordan Doe",
-                    "salary": 80000,
-                    "bonus": 2000,
-                    "company":"IU",
-                    "offerDate": "2021-08-09"
-                }
-            ]
+        "students": [],
+        "selectedStudent": null,
+        "offers": []
         }
     },
     computed: {
@@ -30,23 +14,39 @@ const Offer = {
         }
     },
     methods: {
-        fetchUserData() {
-            console.log("A");
-            fetch('https://randomuser.me/api/')
+        selectStudent(s) {
+          if (this.selectedStudent == s) {
+              return;
+          }
+          this.selectedStudent = s;
+          this.offers = [];
+          this.fetchOfferData(s);  
+        },
+        fetchStudentData() {
+            fetch('/api/student/')
             .then( response => response.json() )
             .then( (responseJson) => {
                 console.log(responseJson);
-                console.log("C");
-                this.person = responseJson.results[0];
+                this.students = responseJson;
             })
             .catch( (err) => {
                 console.error(err);
             })
-            console.log("B");
+        },
+        fetchOfferData(s) {
+            fetch('/api/offer/?student=' + s.id)
+            .then( response => response.json() )
+            .then( (responseJson) => {
+                console.log(responseJson);
+                this.offers = responseJson;
+            })
+            .catch( (err) => {
+                console.error(err);
+            })
         }
     },
     created() {
-        this.fetchUserData();
+        this.fetchStudentData();
     } //end created
 } // end Offer config
   

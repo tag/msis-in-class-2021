@@ -35,27 +35,42 @@
         </div>
       </div>
     </nav>
-    <div class="container">
+    <div id="offerApp" class="container">
       <div class="row align-items-start">
         <div class="col col-4">
-          One of two columns
-        </div>
-        <div id="offerApp" class="col col-8">
-          <h1>Two of two columns</h1>
-          <form v-on:submit.prevent="fetchUserData">
-            <button type="submit">Refresh</button>
-          </form>
-          
-          <div v-if="person">
-            <p>{{ person.name.first }} {{ person.name.last }}</p>
-            <p><img v-bind:src="person.picture.large"></p>
-            <p>{{ prettyBirthday }}</p>
-            <p><a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
+          <div class="student" v-for="s in students"
+            v-on:click="selectStudent(s)">
+            <span class="userName">{{ s.username }}</span><br>
+            <span class="studentName">{{ s.name }}</span>
           </div>
-
-          <ul v-for="row in offers">
-            <li>{{ row.name }} - {{row.salary}}</li>
-          </ul>
+        </div>
+        <div class="col col-8" v-if="selectedStudent">
+          <h1>Offers for {{selectedStudent.name }}</h1>
+        
+          <table v-if="offers.length">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Salary</th>
+                <th>Bonus</th>
+                <th>Offer Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="o in offers">
+                <td>{{ o.companyName }}</td>
+                <td>{{ o.salary }}</td>
+                <td>{{ o.bonus }}</td>
+                <td>{{ o.offerDate }}</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <div class="sadFace" v-if="offers.length == 0">
+            <h3>No offers 😢</h3>
+          </div>
         </div>
 
       </div>
