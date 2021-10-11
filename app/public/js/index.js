@@ -53,10 +53,10 @@ const SomeApp = {
           });
       },
       postNewOffer(evt) {
-        this.offerForm.studentId = this.selectedStudent.studentId;
+        this.offerForm.studentId = this.selectedStudent.id;        
+        console.log("Posting:", this.offerForm);
+        // alert("Posting!");
 
-        console.log("Posting:", JSON.stringify(this.offerForm));
-        
         fetch('api/offer/create.php', {
             method:'POST',
             body: JSON.stringify(this.offerForm),
@@ -68,8 +68,9 @@ const SomeApp = {
           .then( json => {
             console.log("Returned from post:", json);
             // TODO: test a result was returned!
-            this.offers.push(json[0]);
-
+            this.offers = json;
+            
+            // reset the form
             this.offerForm = {};
           });
       }
