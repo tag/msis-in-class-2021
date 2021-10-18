@@ -54,8 +54,8 @@ const SomeApp = {
       },
       postNewOffer(evt) {
         this.offerForm.studentId = this.selectedStudent.id;        
-        console.log("Posting:", this.offerForm);
-        // alert("Posting!");
+        
+        console.log("Posting!", this.offerForm);
 
         fetch('api/offer/create.php', {
             method:'POST',
