@@ -1,6 +1,6 @@
 version: "3"
 services:
-  phptriage:
+  msis-salary:
     build: .
     ports:
       - "8080:80"
