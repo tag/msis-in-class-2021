@@ -8,4 +8,3 @@ services:
       - ./app/public:/srv/app/public
     env_file:
       - ./docker/env
- 

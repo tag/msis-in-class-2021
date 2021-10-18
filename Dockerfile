@@ -4,14 +4,14 @@ LABEL maintainer="Tom Gregory"
 
 RUN docker-php-ext-install pdo_mysql
 
+#Copy our app folder to the image
+COPY app /srv/app
+
 # PHP configuration
 COPY docker/php/php.ini /usr/local/etc/php/php.ini
 
 # Apache configuration
 COPY docker/apache/vhost.conf /etc/apache2/sites-available/000-default.conf
-
-#Copy our app folder to the image
-COPY app /srv/app
 
 #Set the working directory in the image
 WORKDIR /srv/app

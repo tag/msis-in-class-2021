@@ -1,47 +1,56 @@
 <?php
 
 $num = 2;
-$foo = $num . " be";
-$bar = "or not " .$num ." be.";
 
-echo $foo ." ". $bar;
+$foo = $num ." be";
+$bar = "or not " .$num. " be";
 
-echo "\n";
+echo $foo . ' ' . $bar . "\n";
 
 echo $num * $num * $num;
 
-$arr = [1,1,2,3,5,8];
-
-$arr2 = [
-  "first"  => "Tom",
-  "second" => "Bipin",
-  "best"   => "DS"
+$arr = [
+    "first" => "Tom",
+    "second" => "Bipin",
+    "best" => "DS"
 ];
 
+$arr2 = [1,1,2,3,5,8];
+
+
 if (true) {
-    echo "TRUE \n";
-} else {
-    echo "FALSE \n";
+    echo "\nTRUE\n";
 }
 
 while (true) {
+    //This way it doesn't actually do anything
     break;
 }
 
-echo "<ul>";
-foreach ($arr2 as $key => $val) {
-    echo "<li>".$key." is ".$val."</li>\n";
+# This is also a comment
+
+/* This is a 
+multi-line 
+comment */
+
+// echo "<ul>";
+// foreach($arr as $key=>$val) {
+//     echo "<li>".$key ." is ".$val."</li>";
+// }
+// echo "</ul>";
+
+function printAndEncode( $val ) {
+    echo json_encode(
+        $val, 
+        JSON_PRETTY_PRINT|JSON_THROW_ON_ERROR
+    );
 }
-echo "</ul>";
 
-// $arr as json
+// ====
+// Naming conventions
 
-// echo json_encode($arr);
+// JS & PHP : camelCase
 
-echo json_encode(
-    $arr2,
-    JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR
-);
-
-
-
+// PascalCase
+// snake_case
+// kebab-case
