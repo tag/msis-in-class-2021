@@ -65,11 +65,18 @@
                         <td>{{ prettyDollar(offer.salary) }}</td>
                         <td>{{ prettyDollar(offer.bonus) }}</td>
                         <td>{{ offer.offerDate }}</td>
+                        <td></td>
+                        <td>
+                          <button type="button" v-on:click="handleEditOffer(offer)" class="btn btn-outline-secondary btn-sm">Edit</button>
+                          <button type="button" class="btn btn-outline-secondary btn-sm">Delete</button>
+
+                        </td>
                     </tr>
                 </tbody>
             </table>
 
-            <form v-on:submit.prevent="postNewOffer">
+            <h3>{{ selectedOffer === null ? "Add " : "Edit " }} Offer</h3>
+            <form v-on:submit.prevent="postOffer">
               <div class="mb-3">
                 <label for="companyName" class="form-label">Company Name</label>
                 <input type="text" v-model="offerForm.companyName"
@@ -87,7 +94,10 @@
                 <label for="offerDate" class="form-label">offerDate</label>
                 <input type="date" v-model="offerForm.offerDate" class="form-control" id="offerDate">
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">{{ selectedOffer === null ? "Add " : "Edit " }} Offer</button>
+              <button type="button" class="btn btn-outline-secondary" 
+                 v-if="selectedOffer"
+                 v-on:click="handleResetEdit">Cancel Edit</button>
             </form>
             <div class="noOffers" v-if="! offers.length">
               <h3>No offers. 😥</h3>
