@@ -105,6 +105,29 @@ const SomeApp = {
             this.resetOfferForm();
           });
       },
+      postDeleteOffer(o) {
+        if (!confirm("Are you sure you want to delete the offer from "+o.companyName+"?")) {
+          return;
+        }
+        console.log("Delete!", o);
+
+        fetch('api/offer/delete.php', {
+            method:'POST',
+            body: JSON.stringify(o),
+            headers: {
+              "Content-Type": "application/json; charset=utf-8"
+            }
+          })
+          .then( response => response.json() )
+          .then( json => {
+            console.log("Returned from post:", json);
+            // TODO: test a result was returned!
+            this.offers = json;
+
+            // reset the form
+            this.resetOfferForm();
+          });
+      },
       selectOfferToEdit(o) {
           this.selectedOffer = o;
           this.offerForm = Object.assign({}, this.selectedOffer);
