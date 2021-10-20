@@ -32,4 +32,3 @@ class DbConnection
       return self::$connection;
     }
 }
-echo "Test";
