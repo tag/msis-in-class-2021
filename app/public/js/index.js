@@ -80,6 +80,9 @@ const SomeApp = {
 
             // reset the form
             this.resetOfferForm();
+          })
+          .catch( err => {
+            alert("Something went horribly wrong!");
           });
       },
       postEditOffer(evt) {
