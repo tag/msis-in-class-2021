@@ -79,6 +79,9 @@ const SomeApp = {
             this.offers = json;
             
             this.resetOfferForm();
+          })
+          .catch( err => {
+            alert("Something went horribly wrong!");
           });
       },
       postEditOffer(evt) {

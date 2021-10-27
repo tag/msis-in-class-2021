@@ -19,3 +19,15 @@ body {}
 .studentName{
     color:#999;
 }
+
+.reqd {
+    color:red;
+}
+
+input:required {
+    border: 1px dotted red;
+}
+
+input:invalid {
+    background-color: rgb(240, 225, 225);
+}
