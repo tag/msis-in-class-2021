@@ -65,6 +65,7 @@
                         <td>{{ prettyDollar(offer.salary) }}</td>
                         <td>{{ prettyDollar(offer.bonus) }}</td>
                         <td>{{ offer.offerDate }}</td>
+                        <td>{{ offer.status }}</td>
                         <td></td>
                         <td>
                           <button type="button" 
@@ -93,8 +94,15 @@
                 <input type="number" v-model="offerForm.bonus" class="form-control" id="bonus" required="required">
               </div>
               <div class="mb-3">
-                <label for="offerDate" class="form-label">offerDate <span class="reqd">*</span></label>
+                <label for="offerDate" class="form-label">Offer Date <span class="reqd">*</span></label>
                 <input type="date" v-model="offerForm.offerDate" class="form-control" id="offerDate" required="required">
+              </div>
+              <div class="mb-3">
+                <label for="offerStatus" class="form-label">Status <span class="reqd">*</span></label>
+                <select id="offerStatus" v-model="offerForm.status" class="form-select">
+                  <option value="Accepted">Accepted</option>
+                  <option value="Declined">Declined</option>
+                </select>
               </div>
               <button type="submit" class="btn btn-primary">{{ selectedOffer === null ? "Add " : "Edit " }} Offer</button>
               <button type="button" class="btn btn-outline-secondary" v-if="selectedOffer" v-on:click="resetOfferForm">Cancel</button>
