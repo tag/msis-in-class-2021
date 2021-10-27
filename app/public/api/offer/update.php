@@ -35,7 +35,8 @@ $stmt = $db->prepare(
     companyName = ?,
     salary = ?,
     bonus = ?,
-    offerDate = ?
+    offerDate = ?,
+    status = ?
   WHERE id = ?'
 );
 
@@ -44,6 +45,7 @@ $stmt->execute([
   $_POST['salary'],
   $_POST['bonus'],
   $_POST['offerDate'],
+  $_POST['status'],
   $_POST['id']
 ]);
 
