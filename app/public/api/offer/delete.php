@@ -31,16 +31,12 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO offer (studentId, companyName, salary, bonus, offerDate)
-  VALUES (?, ?, ?, ?, ?)'
+  'DELETE FROM offer WHERE id=?'
+
 );
 
 $stmt->execute([
-  $_POST['studentId'],
-  $_POST['companyName'],
-  $_POST['salary'],
-  $_POST['bonus'],
-  $_POST['offerDate']
+  $_POST['id']
 ]);
 
 // Get auto-generated PK from DB
